@@ -11,7 +11,6 @@ int main(void)
 	int n = 49;
 	int x = 48;
 	int c = 49;
-	int t = 0;
 
 	while (x < 58)
 	{
