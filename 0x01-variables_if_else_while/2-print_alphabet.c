@@ -18,10 +18,9 @@ int main(void)
 		char small = tolower(x);
 
 		putchar(small);
+		putchar('\n');
 		x++;
 	}
-	if (x == 'Z')
-		putchar('\n');
 
 	return (0);
 }
