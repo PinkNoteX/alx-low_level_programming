@@ -13,7 +13,7 @@ int main(void)
 
 	x = 'Z';
 
-	while (x <= 'Z')
+	while (x >= 'A')
 	{
 		char small = tolower(x);
 
