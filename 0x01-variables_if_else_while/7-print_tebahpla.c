@@ -13,12 +13,12 @@ int main(void)
 
 	x = 'Z';
 
-	while (x >= 'Z')
+	while (x <= 'Z')
 	{
 		char small = tolower(x);
 
 		putchar(small);
-		x--;
+		x = x - 1;
 	}
 	putchar('\n');
 
