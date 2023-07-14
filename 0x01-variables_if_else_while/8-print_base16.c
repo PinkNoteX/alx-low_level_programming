@@ -10,13 +10,18 @@
 int main(void)
 {
 	int n = 48;
+	int x = 'a';
 
-	while (n < 64)
+	while (n < 58)
 	{
 		putchar(n);
 		n++;
 	}
-
+	while (x <= 'z')
+	{
+		putchar(x);
+		x++;
+	}
 	putchar('\n');
 	return (0);
 }
