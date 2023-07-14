@@ -13,7 +13,7 @@ int main(void)
 	int z;
 
 	x = 'A';
-	Z = 'A';
+	z = 'A';
 
 	while (x <= 'Z')
 	{
