@@ -9,13 +9,14 @@
  */
 int main(void)
 {
-	int n = 0;
+	int n = 48;
 
-	while (n < 16)
+	while (n < 64)
 	{
-		printf("%d", n);
+		putchar(n);
 		n++;
 	}
+
 	putchar('\n');
 	return (0);
 }
