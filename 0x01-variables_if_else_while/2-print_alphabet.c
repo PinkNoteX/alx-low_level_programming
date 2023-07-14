@@ -20,6 +20,8 @@ int main(void)
 		putchar(small);
 		x++;
 	}
+	if (x == 'Z')
+		putchar('\n');
 
 	return (0);
 }
