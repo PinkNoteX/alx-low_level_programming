@@ -10,15 +10,18 @@
 int main(void)
 {
 	int n;
+	int x;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
+	x = 'A';
 
-	for (int x = 'A'; x <= 'Z'; x++)
+	while (x <= 'Z')
 	{
 		char small = tolower(x);
 
 		putchar(small);
+		x++;
 	}
 
 	return (0);
