@@ -18,7 +18,7 @@ int main(void)
 		char small = tolower(x);
 
 		putchar(small);
-		x = x - 1;
+		x--;
 	}
 	putchar('\n');
 
