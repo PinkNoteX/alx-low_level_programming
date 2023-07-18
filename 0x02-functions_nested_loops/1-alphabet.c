@@ -17,9 +17,9 @@ void print_alphabet(void)
 	{
 		char small = tolower(x);
 
-		putchar(small);
+		_putchar(small);
 		x++;
 	}
 
-	putchar('\n');
+	_putchar('\n');
 }
