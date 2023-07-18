@@ -4,22 +4,13 @@
 #include <ctype.h>
 /**
  * print_alphabet - Prints the alphabet in lowercase.
- *
- * Return: Always 0 (Success)
  */
 void print_alphabet(void)
 {
-	int x;
+	char letter;
 
-	x = 'A';
+	for (letter = 'a'; letter <= 'z'; letter++)
+		_putchar(letter);
 
-	while (x <= 'Z')
-	{
-		char small = tolower(x);
-
-		putchar(small);
-		x++;
-	}
-
-	putchar('\n');
+	_putchar('\n');
 }
