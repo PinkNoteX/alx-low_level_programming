@@ -13,7 +13,7 @@
  */
 typedef struct listint_s
 {
-	unsigned int intnum;
+	int intnum;
 	struct listint_s  *next;
 } listnt_t;
 size_t print_listint(const listint_t *h);
