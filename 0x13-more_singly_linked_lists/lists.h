@@ -15,6 +15,6 @@ typedef struct listint_s
 {
 	int intnum;
 	struct listint_s  *next;
-} listintt_t;
+} listint_t;
 size_t print_listint(const listint_t *h);
 #endif
