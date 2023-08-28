@@ -1,5 +1,5 @@
 #include "lists.h"
-/*
+/**
 * print_listint - prints integars in a list
 * @h: struct listint_t type
 * Return: size_t value or the sum
