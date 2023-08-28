@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 /**
- * struct list_s - singly linked list
+ * struct listnt_s - singly linked list
  * @intnum : an integar
  * @next : points to the next node
  *
