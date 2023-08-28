@@ -6,16 +6,14 @@
 #include <string.h>
 /**
  * struct list_s - singly linked list
- * @str: string
- * @len : len of the string
+ * @intnum : an integar
  * @next : points to the next node
  *
  * Description: singly linked list node structure
  */
 typedef struct list_s
 {
-	char *str;
-	unsigned int len;
+	unsigned int intnum;
 	struct list_s *next;
 } list_t;
 size_t print_listint(const listint_t *h);
