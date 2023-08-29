@@ -13,12 +13,12 @@ listint_t *find_listint_loop(listint_t *head)
 
 	currs = fast = head;
 	do {
-		if (currents->next)
+		if (currs->next)
 			currs = currs->next;
 		else
 			return (NULL);
 
-		if (currentf->next->next)
+		if (fast->next->next)
 			fast = fast->next->next;
 		else
 			return (NULL);
@@ -27,7 +27,7 @@ listint_t *find_listint_loop(listint_t *head)
 	currs = head;
 	while (fast != currs)
 	{
-		currf = fast->next;
+		fast = fast->next;
 		currs = currs->next;
 	}
 
