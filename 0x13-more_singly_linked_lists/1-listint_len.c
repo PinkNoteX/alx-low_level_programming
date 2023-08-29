@@ -1,8 +1,8 @@
 #include "lists.h"
 /**
-* listint_len - returns the sum of elemens in a linked list
-* @h: struct listint_t type
-* Return: the sum
+* listint_len - returns the sum of elements in a linked list
+* @h: struct
+* Return: sum of elements
 */
 size_t listint_len(const listint_t *h)
 {
