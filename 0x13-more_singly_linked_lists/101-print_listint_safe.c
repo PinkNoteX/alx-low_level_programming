@@ -27,7 +27,7 @@ size_t looped_listint_len(const listint_t *head)
 			while (tor != hare)
 			{
 				number++;
-				tor = tortoise->next;
+				tor = tor->next;
 				hare = hare->next;
 			}
 
@@ -71,7 +71,7 @@ size_t print_listint_safe(const listint_t *head)
 
 	else
 	{
-		for (index = 0; index < nodes; index++)
+		for (index = 0; index < number; index++)
 		{
 			printf("[%p] %d\n", (void *)head, head->n);
 			head = head->next;
