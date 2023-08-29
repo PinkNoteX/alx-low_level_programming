@@ -3,7 +3,7 @@
  * add_nodeint - adds a node at the end
  * @head: start of node
  * @n: new node value
- * Return: the linked list
+ * Return: the linked list or null
  */
 listint_t *add_nodeint(listint_t **head, const int n)
 {
