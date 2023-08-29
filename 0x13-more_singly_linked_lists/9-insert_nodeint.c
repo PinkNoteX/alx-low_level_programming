@@ -21,7 +21,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		sum++;
 	}
 
-	if (count != idx - 1 && idx != 0)
+	if (sum != idx - 1 && idx != 0)
 		return (NULL);
 
 	new = malloc(sizeof(listint_t));
