@@ -7,32 +7,33 @@
  */
 size_t free_listint_safe(listint_t **h)
 {
-	listint_t *list;
-	size_t sum;
+	size_t len = 0;
 	int d;
+	listint_t *temp;
 
-	sum = 0;
 	if (!h || !*h)
 		return (0);
-	while (*h != NULL)
+
+	while (*h)
 	{
 		d = *h - (*h)->next;
 		if (d > 0)
 		{
-			list = (*h)->next;
+			temp = (*h)->next;
 			free(*h);
-			*h = list;
-			sum++;
+			*h = temp;
+			len++;
 		}
 		else
 		{
 			free(*h);
 			*h = NULL;
-			sum++
+			len++;
 			break;
 		}
 	}
+
 	*h = NULL;
 
-	return (sum);
+	return (len);
 }
