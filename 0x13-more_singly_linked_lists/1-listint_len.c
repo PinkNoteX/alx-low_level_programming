@@ -1,8 +1,8 @@
 #include "lists.h"
 /**
-* listint_len - prints integars in a list
+* listint_len - returns the sum of elemens in a linked list
 * @h: struct listint_t type
-* Return: size_t value or the sum
+* Return: the sum
 */
 size_t listint_len(const listint_t *h)
 {
