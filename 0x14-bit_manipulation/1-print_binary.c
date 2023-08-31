@@ -1,11 +1,8 @@
 #include <stdio.h>
 #include "main.h"
-
 /**
- * print_binary - convert decimal to binary
- * @n: unsigned long int.
- *
- * Return: no return.
+ * print_binary - Prints the binary representation of a number.
+ * @n: The number to be printed in binary.
  */
 
 void print_binary(unsigned long int n)
