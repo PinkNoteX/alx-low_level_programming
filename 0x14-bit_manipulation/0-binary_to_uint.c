@@ -12,7 +12,7 @@ unsigned int binary_to_uint(const char *b)
 {
 	int stringlen = strlen(b);
 	int val = 1;
-	int total = 0;
+	unsigned int total = 0;
 
 	for (int i = (stringlen - 1); i >= 0; i--)
 	{
@@ -26,8 +26,8 @@ unsigned int binary_to_uint(const char *b)
 		}
 		else
 		{
-			i = 0;
-			total = 0;
+			return (0);
+			
 		}
 		return (total);
 	}
