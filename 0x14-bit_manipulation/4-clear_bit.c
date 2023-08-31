@@ -2,9 +2,9 @@
 /**
  * clear_bit - sets 0 at a given index.
  * @n: pointer to and unsigned long int.
- * @index; the index, starting from 0 of the bit you want to set
+ * @index: the index
  *
- * Returns: 1 if it worked, or -1 if an error occurred
+ * Return: 1 if it worked, or -1 if an error occurred
  */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
