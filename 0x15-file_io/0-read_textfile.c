@@ -2,6 +2,13 @@
 #include <stdlib.h>
 #include "main.h"
 
+/**
+ * read_textfile - reads a text file and then prints it.
+ * @filename: const char type pointer to file to read
+ * @letters: size_t type
+ *
+ * Return: readfile or 0
+ */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char *buf;
@@ -9,7 +16,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	size_t writefile;
 	size_t closefile;
 	int x;
-	
 
 	buf = malloc(sizeof(char) * letters);
 	if (filename == NULL)
@@ -25,13 +31,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	readfile = (x, buf, letters);
 	writefile = write(STDOUT_FILEND, buf, readfile);
 
-	if(readfile != writefile || readfile == -1 || writefile == -1 || x == -1)
+	if (readfile != writefile || readfile == -1 || writefile == -1 || x == -1)
 	{
-		free (buf);
+		free(buf);
 		return (0);
 	}
 
-	free (buf);
+	free(buf);
 	closefile = close(x);
 
 	if (closefile == -1)
