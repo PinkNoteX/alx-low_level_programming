@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "main.h"
 
 /**
@@ -12,9 +13,9 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char *buf;
-	size_t readfile;
-	size_t writefile;
-	size_t closefile;
+	ssize_t readfile;
+	ssize_t writefile;
+	ssize_t closefile;
 	int x;
 
 	buf = malloc(sizeof(char) * letters);
@@ -28,8 +29,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 	x = open(filename, O_RDONLY);
-	readfile = (x, buf, letters);
-	writefile = write(STDOUT_FILEND, buf, readfile);
+	readfile = read(x, buf, letters);
+	writefile = write(STDOUT_FILENO, buf, readfile);
 
 	if (readfile != writefile || readfile == -1 || writefile == -1 || x == -1)
 	{
