@@ -8,24 +8,25 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int len;
-	int openf, writef;
+	int len = 0;
+	int openf, writef = 0;
 
-	openf = open(filename, O_CREAT | O_TRUNC | O_WRONLY, 0600);
 	if (filename == NULL)
 		return (-1);
-	if (openf == -1)
-		return (-1);
-	if (text_content == NULL)
-		text_content = "";
+
+	if (text_content != NULL)
+	{
 	while (text_content[len] != '\0')
 	{
 		len++;
 	}
+	}
+	openf = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
 	writef = write(openf, text_content, len);
 
-	if (writef == -1)
+	if (writef == -1 || openf == -1)
 		return (-1);
+
 	close(openf);
 
 	return (1);
