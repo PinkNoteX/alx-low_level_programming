@@ -26,7 +26,7 @@ void elf_checker(unsigned char *e_ident)
 */
 void magic_pr(unsigned char *e_ident)
 {
-	int ind
+	int ind;
 
 	printf("  Magic:   ");
 
@@ -151,7 +151,7 @@ void osabi_pr(unsigned char *e_ident)
 * type_pr - Prints type
 * @e_ident: points to ELF array.
 */
-void type_pr(unsigned char *e_ident)
+void type_pr(unsigned int e_type, unsigned char *e_ident)
 {
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 		e_type >>= 8;
