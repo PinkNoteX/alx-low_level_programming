@@ -91,6 +91,99 @@ void data_pr(unsigned char *e_ident)
 	}
 }
 /**
+* version_pr - Prints version
+* @e_ident: points to ELF array.
+*/
+void version_pr(unsigned char *e_ident)
+{
+	printf("  Version:                             %d", e_ident[EI_VERSION]);
+
+	if (e_ident[EI_VERSION] == EV_CURRENT)
+	{
+		printf(" (current)\n");
+	}
+	else
+	{
+		printf("\n");
+	}
+}
+/**
+* abi_pr - Prints abi
+* @e_ident: points to elf array.
+*/
+void abi_pr(unsigned char *e_ident)
+{
+	printf("  ABI Version:                       %d\n",
+			e_ident[EI_ABIVERSION]);
+}
+/**
+* osabi_pr - Prints osabi
+* @e_ident: points to ELF array.
+*/
+void osabi_pr(unsigned char *e_ident)
+{
+	printf("  OS/ABI:                             ");
+
+	if (e_ident[EI_OSABI] == ELFOSABI_STANDALONE)
+		printf("Standalone App\n");
+	else if (e_ident[EI_OSABI] == ELFOSABI_ARM)
+		printf("ARM\n");
+	else if (e_ident[EI_OSABI] == ELFOSABI_TRU64)
+		printf("UNIX - TRU64\n");
+	else if (e_ident[EI_OSABI] == ELFOSABI_FREEBSD)
+		printf("UNIX - FreeBSD\n");
+	else if (e_ident[EI_OSABI] == ELFOSABI_IRIX)
+		printf("UNIX - IRIX\n");
+	else if (e_ident[EI_OSABI] == ELFOSABI_SOLARIS)
+		printf("UNIX - Solaris\n");
+	else if (e_ident[EI_OSABI] == ELFOSABI_LINUX)
+		printf("UNIX - Linux\n");
+	else if (e_ident[EI_OSABI] == ELFOSABI_NETBSD)
+		printf("UNIX - NetBSD\n");
+	else if (e_ident[EI_OSABI] == ELFOSABI_HPUX)
+		printf("UNIX - HP-UX\n");
+	else if (e_ident[EI_OSABI] == ELFOSABI_NONE)
+		printf("UNIX - System V\n");
+	else
+		printf("<unknown: %x>\n", e_ident[EI_OSABI]);
+}
+/**
+* type_pr - Prints type
+* @e_ident: points to ELF array.
+*/
+void type_pr(unsigned char *e_ident)
+{
+	if (e_ident[EI_DATA] == ELFDATA2MSB)
+		e_type >>= 8;
+
+	printf("  Type:                             ");
+
+	if (e_type == ET_CORE)
+	{
+		printf("CORE (Core file)\n");
+	}
+	else if (e_type == ET_DYN)
+	{
+		printf("DYN (Shared object file)\n");
+	}
+	else if (e_type == ET_EXEC)
+	{
+		printf("EXEC (Executable file)\n");
+	}
+	else if (e_type == ET_REL)
+	{
+		printf("REL (Relocatable file)\n");
+	}
+	else if (e_type == ET_NONE)
+	{
+		printf("NONE (None)\n");
+	}
+	else
+	{
+		printf("<unknown: %x>\n", e_type);
+	}
+}
+/**
 * main - Displays ELF Header
 * @c: number of args.
 * @v: pointer to args.
