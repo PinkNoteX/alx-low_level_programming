@@ -71,7 +71,7 @@ void class_pr(unsigned char *e_ident)
 */
 void data_pr(unsigned char *e_ident)
 {
-	printf("  Data:                             ");
+	printf("  Data:                              ");
 
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 	{
@@ -96,7 +96,7 @@ void data_pr(unsigned char *e_ident)
 */
 void version_pr(unsigned char *e_ident)
 {
-	printf("  Version:                             %d", e_ident[EI_VERSION]);
+	printf("  Version:                           %d", e_ident[EI_VERSION]);
 
 	if (e_ident[EI_VERSION] == EV_CURRENT)
 	{
@@ -122,7 +122,7 @@ void abi_pr(unsigned char *e_ident)
 */
 void osabi_pr(unsigned char *e_ident)
 {
-	printf("  OS/ABI:                             ");
+	printf("  OS/ABI:                            ");
 
 	if (e_ident[EI_OSABI] == ELFOSABI_STANDALONE)
 		printf("Standalone App\n");
@@ -156,7 +156,7 @@ void type_pr(unsigned int e_type, unsigned char *e_ident)
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 		e_type >>= 8;
 
-	printf("  Type:                             ");
+	printf("  Type:                              ");
 
 	if (e_type == ET_CORE)
 	{
