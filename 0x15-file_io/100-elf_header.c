@@ -21,6 +21,76 @@ void elf_checker(unsigned char *e_ident)
 	}
 }
 /**
+* magic_pr - Prints magic
+* @e_ident: points to ELF array.
+*/
+void magic_pr(unsigned char *e_ident)
+{
+	int ind
+
+	printf("  Magic:   ");
+
+	for (ind = 0; ind < EI_NIDENT; ind++)
+	{
+		printf("%02x", e_ident[ind]);
+
+		if (ind == EI_NIDENT - 1)
+			printf("\n");
+		else
+			printf(" ");
+	}
+}
+/**
+* class_pr - Prints class
+* @e_ident: points to ELF array.
+*/
+void class_pr(unsigned char *e_ident)
+{
+	printf("  Class:                             ");
+
+	if (e_ident[EI_CLASS] == ELFCLASS32)
+	{
+		printf("ELF32\n");
+	}
+	else if (e_ident[EI_CLASS] == ELFCLASS64)
+	{
+		printf("ELF64\n");
+	}
+	else if (e_ident[EI_CLASS] == ELFCLASSNONE)
+	{
+		printf("none\n");
+	}
+	else
+	{
+		printf("<unknown: %x>\n", e_ident[EI_CLASS]);
+	}
+}
+/**
+* data_pr - Prints data
+* @e_ident: points to ELF array.
+*/
+void data_pr(unsigned char *e_ident)
+{
+	printf("  Data:                             ");
+
+	if (e_ident[EI_DATA] == ELFDATA2MSB)
+	{
+		printf("2's complement, big endian\n");
+	}
+	else if (e_ident[EI_DATA] == ELFDATA2LSB)
+	{
+		printf("2's complement, little endian\n");
+	}
+	else if (e_ident[EI_DATA] == ELFDATANONE)
+	{
+		printf("none\n");
+	}
+	else
+	{
+		printf("<unknown: %x>\n", e_ident[EI_DATA]);
+	}
+}
+/**
 * main - Displays ELF Header
 * @c: number of args.
 * @v: pointer to args.
