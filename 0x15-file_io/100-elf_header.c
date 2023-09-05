@@ -149,6 +149,7 @@ void osabi_pr(unsigned char *e_ident)
 }
 /**
 * type_pr - Prints type
+* @e_type: ELF type
 * @e_ident: points to ELF array.
 */
 void type_pr(unsigned int e_type, unsigned char *e_ident)
