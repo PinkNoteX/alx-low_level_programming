@@ -6,7 +6,7 @@
  */
 size_t dlistint_len(const dlistint_t *h)
 {
-	dlistint_t *a;
+	const dlistint_t *a;
 	unsigned int c = 0;
 
 	a = malloc(sizeof(dlistint_t));
