@@ -127,25 +127,22 @@ void shash_table_print(const shash_table_t *ht)
 void shash_table_print_rev(const shash_table_t *ht)
 {
 	shash_node_t *head;
+	char *s;
 
 	if (ht == NULL)
 		return;
 	printf("{");
+	s = "";
 
 	head = ht->stail;
 	while (head != NULL)
 	{
+
+		printf("%s'%s': '%s'", s, head->key, head->value);
+		s = ", ";
 		head = head->sprev;
-		printf("'%s': '%s'", head->key, head->value);
-
-		if (head->sprev != NULL)
-		{
-			printf(", ");
-		}
-		printf("}\n");
 	}
-
-
+	printf("}\n");
 }
 /**
  * shash_table_delete - delete hash table
