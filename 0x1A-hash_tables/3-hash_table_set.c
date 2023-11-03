@@ -29,8 +29,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 hash_node_t *hash_add(hash_node_t **head, const char *key, const char *value)
 {
 	hash_node_t *temp;
+	
 	temp = *head;
-
 	while (temp != NULL)
 	{
 		if (strcmp(key, temp->key) == 0)
