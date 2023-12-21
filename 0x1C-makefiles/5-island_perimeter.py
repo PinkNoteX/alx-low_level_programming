@@ -32,4 +32,3 @@ def island_perimeter(grid):
                         if not row[id2 + 1]:
                             c += 1
     return c
-
