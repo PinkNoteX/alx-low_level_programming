@@ -8,7 +8,7 @@
  * @end: end index to end print arr at
  * Return: void
 */
-void printarr(int *arr, int start , int end)
+void printarr(int *arr, int start, int end)
 {
 	int i = 0;
 
@@ -27,21 +27,21 @@ void printarr(int *arr, int start , int end)
  * @end: end of arr
  * Return: index target is at or recursion or -1
 */
-int divide(int *arr,int target, int start, int end)
+int divide(int *arr, int target, int start, int end)
 {
 	int mid;
 
 	printarr(arr, start, end);
-	mid = floor((start + end)/2);
+	mid = floor((start + end) / 2);
 	if (target > arr[end] && mid == end)
-		return -1;
+		return (-1);
 	if (target == arr[mid])
-		return mid;
+		return (mid);
 	if (target > arr[mid])
-		return divide(arr, target, mid+1, end);
+		return (divide(arr, target, mid + 1, end));
 	if (target < arr[mid])
-		return divide(arr, target, start, mid-1);
-	return -1;
+		return (divide(arr, target, start, mid - 1));
+	return (-1);
 }
 /**
  * binary_search - binary search algorithm
@@ -54,5 +54,6 @@ int binary_search(int *array, size_t size, int value)
 {
 	int start = 0;
 	int end = size - 1;
-	return divide(array, value, start, end);
+
+	return (divide(array, value, start, end));
 }
